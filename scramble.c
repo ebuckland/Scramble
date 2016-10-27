@@ -398,7 +398,7 @@ bool lookup(string s, int min, int max)
     {
         return false;
     }
-    int midpoint = ((max + min)/2);
+    int midpoint = ((max + min) / 2);
     
     if (strcmp(strlwr(dictionary.words[min].letters), s) == 0 
     || strcmp(strlwr(dictionary.words[max].letters), s) == 0) 
@@ -437,19 +437,23 @@ bool lookup(string s, int min, int max)
 void scramble(void)
 {
     char gridTemp[DIMENSION][DIMENSION];
-    for (int i = 0; i < DIMENSION; i++) {
-        for (int j = 0; j < DIMENSION; j++) {
+    for (int i = 0; i < DIMENSION; i++) 
+    {
+        for (int j = 0; j < DIMENSION; j++) 
+        {
             gridTemp[DIMENSION - j - 1][i] = grid[i][j];
         }
     }
-    for (int i = 0; i < DIMENSION; i++) {
-        for (int j = 0; j < DIMENSION; j++) {
+    for (int i = 0; i < DIMENSION; i++) 
+    {
+        for (int j = 0; j < DIMENSION; j++) 
+        {
             grid[i][j] = gridTemp[i][j];
         }
     }
 }
 
-string strlwr(string s) 
+string strlwr(string s)
 {
     for (int i = 0; i < strlen(s); i++) 
     {
@@ -458,7 +462,7 @@ string strlwr(string s)
     return s;
 }
 
-string strupr(string s) 
+string strupr(string s)
 {
     for (int i = 0; i < strlen(s); i++) 
     {
